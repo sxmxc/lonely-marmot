@@ -1,0 +1,130 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node2D",
+"class": &"Board",
+"language": &"GDScript",
+"path": "res://game_board/chess_board/board.gd"
+}, {
+"base": "Control",
+"class": &"BoardTile",
+"language": &"GDScript",
+"path": "res://game_board/chess_board/board_tile.gd"
+}, {
+"base": "Control",
+"class": &"Card",
+"language": &"GDScript",
+"path": "res://cards/card.gd"
+}, {
+"base": "Node",
+"class": &"CardDB",
+"language": &"GDScript",
+"path": "res://cards/card_db.gd"
+}, {
+"base": "Resource",
+"class": &"CardData",
+"language": &"GDScript",
+"path": "res://cards/card_data.gd"
+}, {
+"base": "Node2D",
+"class": &"Events",
+"language": &"GDScript",
+"path": "res://event_bus/Events.gd"
+}, {
+"base": "Node2D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://player/player.gd"
+}, {
+"base": "Resource",
+"class": &"PlayerData",
+"language": &"GDScript",
+"path": "res://player/player_data.gd"
+}, {
+"base": "Control",
+"class": &"PlayerMenu",
+"language": &"GDScript",
+"path": "res://player/ui/player_menu.gd"
+}, {
+"base": "Node",
+"class": &"Print",
+"language": &"GDScript",
+"path": "res://addons/ColorConsole/class/print.gd"
+}, {
+"base": "Node2D",
+"class": &"Unit",
+"language": &"GDScript",
+"path": "res://units/unit.gd"
+}, {
+"base": "Resource",
+"class": &"UnitData",
+"language": &"GDScript",
+"path": "res://units/unit_data.gd"
+}, {
+"base": "GDScript",
+"class": &"dice_syntax",
+"language": &"GDScript",
+"path": "res://addons/dice_syntax/dice_syntax.gd"
+}]
+_global_script_class_icons={
+"Board": "",
+"BoardTile": "",
+"Card": "",
+"CardDB": "",
+"CardData": "",
+"Events": "",
+"Player": "",
+"PlayerData": "",
+"PlayerMenu": "",
+"Print": "res://addons/ColorConsole/class/icons/class.svg",
+"Unit": "",
+"UnitData": "",
+"dice_syntax": ""
+}
+
+[application]
+
+config/name="logika-magik"
+config/description="Chess TCG"
+config/features=PackedStringArray("4.0")
+config/icon="res://icon.png"
+config/version="0.0.1-alpha"
+
+[autoload]
+
+CardDb="*res://cards/card_db.tscn"
+EventBus="*res://event_bus/EventBus.tscn"
+Logger="*res://event_bus/Logger.tscn"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/dice_syntax/plugin.cfg", "res://addons/ColorConsole/plugin.cfg")
+
+[input]
+
+player_menu={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true

@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfbb0k87u1bpo"]
+
+[ext_resource type="Script" path="res://dev/CardDBPanel.gd" id="1_vvn80"]
+
+[node name="debug" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardDBPanel" type="Panel" parent="."]
+offset_right = 367.0
+offset_bottom = 186.0
+script = ExtResource("1_vvn80")
+
+[node name="PanelHBox" type="HBoxContainer" parent="CardDBPanel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -58.0
+offset_right = 151.5
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="InputVBox" type="VBoxContainer" parent="CardDBPanel/PanelHBox"]
+offset_right = 138.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IDInput" type="TextEdit" parent="CardDBPanel/PanelHBox/InputVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+offset_right = 138.0
+offset_bottom = 30.0
+placeholder_text = "Card ID"
+
+[node name="LookupButton" type="Button" parent="CardDBPanel/PanelHBox/InputVBox"]
+unique_name_in_owner = true
+offset_top = 34.0
+offset_right = 138.0
+offset_bottom = 65.0
+text = "Lookup"
+
+[node name="AddButton" type="Button" parent="CardDBPanel/PanelHBox/InputVBox"]
+unique_name_in_owner = true
+offset_top = 69.0
+offset_right = 138.0
+offset_bottom = 100.0
+text = "Add to collection"
+
+[node name="OutputVBox" type="VBoxContainer" parent="CardDBPanel/PanelHBox"]
+offset_left = 168.0
+offset_right = 303.0
+offset_bottom = 116.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CardDBPanel/PanelHBox/OutputVBox"]
+offset_right = 135.0
+offset_bottom = 26.0
+
+[node name="Label" type="Label" parent="CardDBPanel/PanelHBox/OutputVBox/HBoxContainer"]
+offset_right = 92.0
+offset_bottom = 26.0
+text = "Card Name:"
+
+[node name="CardNameValue" type="Label" parent="CardDBPanel/PanelHBox/OutputVBox/HBoxContainer"]
+unique_name_in_owner = true
+offset_left = 96.0
+offset_right = 132.0
+offset_bottom = 26.0
+text = "xxxx"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CardDBPanel/PanelHBox/OutputVBox"]
+offset_top = 30.0
+offset_right = 135.0
+offset_bottom = 56.0
+
+[node name="Label2" type="Label" parent="CardDBPanel/PanelHBox/OutputVBox/HBoxContainer2"]
+offset_right = 82.0
+offset_bottom = 26.0
+text = "Card Type:"
+
+[node name="CardTypeValue" type="Label" parent="CardDBPanel/PanelHBox/OutputVBox/HBoxContainer2"]
+unique_name_in_owner = true
+offset_left = 86.0
+offset_right = 122.0
+offset_bottom = 26.0
+text = "xxxx"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CardDBPanel/PanelHBox/OutputVBox"]
+offset_top = 60.0
+offset_right = 135.0
+offset_bottom = 86.0
+
+[node name="Label3" type="Label" parent="CardDBPanel/PanelHBox/OutputVBox/HBoxContainer3"]
+offset_right = 95.0
+offset_bottom = 26.0
+text = "Card Target:"
+
+[node name="CardTargetValue" type="Label" parent="CardDBPanel/PanelHBox/OutputVBox/HBoxContainer3"]
+unique_name_in_owner = true
+offset_left = 99.0
+offset_right = 135.0
+offset_bottom = 26.0
+text = "xxxx"
+
+[node name="ErrorLabel" type="Label" parent="CardDBPanel/PanelHBox/OutputVBox"]
+unique_name_in_owner = true
+offset_top = 90.0
+offset_right = 135.0
+offset_bottom = 116.0
+text = "Error"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CardDBPanel/PanelHBox/InputVBox/LookupButton" to="CardDBPanel" method="_on_lookup_button_pressed"]
+[connection signal="pressed" from="CardDBPanel/PanelHBox/InputVBox/AddButton" to="CardDBPanel" method="_on_add_button_pressed"]

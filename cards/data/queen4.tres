@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c4dkglf3o253h"]
+
+[ext_resource type="Script" path="res://cards/card_data.gd" id="1_4nwff"]
+[ext_resource type="Texture2D" uid="uid://bxvxioqf42fjq" path="res://cards/Black_Queen_full.webp" id="1_yov1d"]
+
+[resource]
+script = ExtResource("1_4nwff")
+card_name = "Queen4"
+card_id = "004"
+card_ability_text = "Moves like normal"
+card_flavor_text = "Not much is known"
+card_image = ExtResource("1_yov1d")
+card_value = null
+card_type = 0
+card_target_type = 5

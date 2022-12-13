@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bp7sahs4185ql"]
+
+[ext_resource type="Texture2D" uid="uid://cbs568jvyuriu" path="res://cards/Black_King_full.webp" id="1_6xirc"]
+[ext_resource type="Script" path="res://cards/card_data.gd" id="1_uskjh"]
+
+[resource]
+script = ExtResource("1_uskjh")
+card_name = "King5"
+card_id = "005"
+card_ability_text = "Moves like normal"
+card_flavor_text = "Not much is known"
+card_image = ExtResource("1_6xirc")
+card_value = null
+card_type = 0
+card_target_type = 4

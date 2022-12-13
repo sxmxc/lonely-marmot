@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm63s480huduv"]
+
+[ext_resource type="Script" path="res://game_board/GameBoard.gd" id="1_n73tf"]
+[ext_resource type="PackedScene" uid="uid://dwylfm45iycpr" path="res://game_board/chess_board/board.tscn" id="2_lr8j4"]
+[ext_resource type="PackedScene" uid="uid://dughmkepehs7f" path="res://player/player.tscn" id="3_r41uw"]
+
+[node name="GameBoard" type="Node2D"]
+script = ExtResource("1_n73tf")
+
+[node name="Board" parent="." instance=ExtResource("2_lr8j4")]
+position = Vector2(388, 106)
+
+[node name="PlayerHand" type="Node2D" parent="."]
+position = Vector2(595, 624)
+
+[node name="PlayerLibrary" type="Node2D" parent="."]
+position = Vector2(207, 491)
+
+[node name="PlayerGraveyard" type="Node2D" parent="."]
+
+[node name="OpponentHand" type="Node2D" parent="."]
+
+[node name="OpponentLibrary" type="Node2D" parent="."]
+
+[node name="OpponentGraveyard" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_r41uw")]
