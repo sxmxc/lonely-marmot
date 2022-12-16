@@ -22,9 +22,9 @@ func update_lists():
 	current_collection_list.clear()
 	current_deck_list.clear()
 	for cardID in player_data.player_collected_cards:
-		current_collection_list.add_item(CardDb.get_card_by_id(cardID).card_name)
+		current_collection_list.add_item(CardDB.get_card_by_id(cardID).card_name)
 	for cardID in player_data.player_decks[selected_deck]:
-		current_deck_list.add_item(CardDb.get_card_by_id(cardID).card_name)
+		current_deck_list.add_item(CardDB.get_card_by_id(cardID).card_name)
 	var deck_list = []
 	for i in current_deck_list.get_item_count():
 		deck_list.append(current_deck_list.get_item_text(i))
@@ -44,7 +44,7 @@ func _on_add_to_deck_button_pressed():
 		current_collection_list.remove_item(current_collection_list.get_selected_items()[0])
 	current_collection_list.deselect_all()
 	for card in cards_to_add:
-		current_deck_list.add_item(CardDb.get_card_by_name(card).card_name)
+		current_deck_list.add_item(CardDB.get_card_by_name(card).card_name)
 	pass # Replace with function body.
 
 

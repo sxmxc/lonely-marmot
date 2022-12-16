@@ -148,8 +148,24 @@ text = "Card ID:"
 unique_name_in_owner = true
 offset_left = 66.0
 offset_top = 1.0
-offset_right = 67.0
+offset_right = 253.0
 offset_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
+offset_left = 257.0
+offset_right = 333.0
+offset_bottom = 26.0
+text = "Collected:"
+horizontal_alignment = 2
+
+[node name="CardCount" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+offset_left = 337.0
+offset_right = 524.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
 offset_top = 30.0

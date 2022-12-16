@@ -24,11 +24,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://cards/card.gd"
 }, {
-"base": "Node",
-"class": &"CardDB",
-"language": &"GDScript",
-"path": "res://cards/card_db.gd"
-}, {
 "base": "Resource",
 "class": &"CardData",
 "language": &"GDScript",
@@ -38,6 +33,11 @@ _global_script_classes=[{
 "class": &"Events",
 "language": &"GDScript",
 "path": "res://event_bus/Events.gd"
+}, {
+"base": "Node",
+"class": &"GlobConsts",
+"language": &"GDScript",
+"path": "res://utils/GlobConsts.gd"
 }, {
 "base": "Node2D",
 "class": &"Player",
@@ -60,6 +60,16 @@ _global_script_classes=[{
 "path": "res://addons/ColorConsole/class/print.gd"
 }, {
 "base": "Node2D",
+"class": &"State",
+"language": &"GDScript",
+"path": "res://game_board/fsm/State.gd"
+}, {
+"base": "Node2D",
+"class": &"StateMachine",
+"language": &"GDScript",
+"path": "res://game_board/fsm/StateMachine.gd"
+}, {
+"base": "Node2D",
 "class": &"Unit",
 "language": &"GDScript",
 "path": "res://units/unit.gd"
@@ -78,13 +88,15 @@ _global_script_class_icons={
 "Board": "",
 "BoardTile": "",
 "Card": "",
-"CardDB": "",
 "CardData": "",
 "Events": "",
+"GlobConsts": "",
 "Player": "",
 "PlayerData": "",
 "PlayerMenu": "",
 "Print": "res://addons/ColorConsole/class/icons/class.svg",
+"State": "",
+"StateMachine": "",
 "Unit": "",
 "UnitData": "",
 "dice_syntax": ""
@@ -100,7 +112,7 @@ config/version="0.0.1-alpha"
 
 [autoload]
 
-CardDb="*res://cards/card_db.tscn"
+CardDB="*res://cards/card_db.tscn"
 EventBus="*res://event_bus/EventBus.tscn"
 Logger="*res://event_bus/Logger.tscn"
 

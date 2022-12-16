@@ -15,6 +15,7 @@ var file_dict = {1:"a",2:"b",3:"c",4:"d",5:"e",6:"f",7:"g",8:"h"}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialize_board()
+	EventBus.buses["LoggerEvents"].emit_signal("log_message", "Board::ready")
 	pass # Replace with function body.
 
 
@@ -47,3 +48,4 @@ func is_tile_vacant(pos=Vector2i(), direction=Vector2i()):
 		if tile_pos.y < board_size.y and tile_pos.y >= 0:
 			return true if board_tiles[tile_pos.x][tile_pos.y].unit == null else false
 	return false
+

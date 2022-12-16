@@ -6,6 +6,7 @@ func _ready():
 	EventBus.buses["LoggerEvents"].log_message.connect(log_message)
 	EventBus.buses["LoggerEvents"].log_event.connect(log_event)
 	EventBus.buses["LoggerEvents"].log_info.connect(log_info)
+	log_message("Logger::ready")
 	test()
 
 func log_message(msg : String):

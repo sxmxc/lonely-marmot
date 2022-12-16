@@ -7,5 +7,6 @@ func _ready():
 	for child in get_children():
 		if child is Events:
 			buses[child.name] = child as Events
+	Logger.log_message("EventBus::ready")
 	pass # Replace with function body.
 

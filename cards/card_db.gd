@@ -1,11 +1,11 @@
-extends Node
-class_name CardDB
+extends Node2D
 
 var _db : Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_from_disk()
+	Logger.log_message("CardDB::ready")
 	pass # Replace with function body.
 
 
@@ -41,8 +41,8 @@ func remove_from_db(id: int):
 
 
 func load_from_disk(path: String = "res://cards/data"):
-	await EventBus.ready
-	EventBus.buses["LoggerEvents"].emit_signal("log_message","Loading data from disk")
+	Logger.log_message("CardDB::Loading data from disk")
+	#EventBus.buses["LoggerEvents"].emit_signal("log_message","Loading data from disk")
 	var dir = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()
@@ -60,4 +60,5 @@ func load_from_disk(path: String = "res://cards/data"):
 					#print("Added card to DB: " + card.card_name)
 				file_name = dir.get_next()
 	else:
-		EventBus.buses["LoggerEvents"].emit("log_message","An error occurred when trying to access the path.")
+		Logger.log_message("CardDB::An error occurred when trying to access the path.")
+		#EventBus.buses["LoggerEvents"].emit("log_message","An error occurred when trying to access the path.")

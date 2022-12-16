@@ -38,9 +38,9 @@ func _process(_delta):
 	pass
 
 func add_card_to_collection(id: String):
-	if CardDb.has_card(id):
+	if CardDB.has_card(id):
 		_data.player_collected_cards.append(id)
-		print(CardDb.get_card_by_id(id).card_name + " added to player collection")
+		print(CardDB.get_card_by_id(id).card_name + " added to player collection")
 		save_player_data()
 		return true
 	return false

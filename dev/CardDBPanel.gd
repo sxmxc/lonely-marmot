@@ -23,8 +23,8 @@ func _process(delta):
 
 func _on_lookup_button_pressed():
 	var args = id_input.text
-	if CardDb.has_card(args):
-		var card_data = CardDb.get_card_by_id(args) as CardData
+	if CardDB.has_card(args):
+		var card_data = CardDB.get_card_by_id(args)
 		card_name_value.set_text(card_data.card_name)
 		card_type_value.set_text(CardData.CARD_TYPE.keys()[card_data.card_type])
 		card_target_value.set_text(UnitData.UNIT_TYPE.keys()[card_data.card_target_type])
@@ -41,7 +41,7 @@ func _on_add_button_pressed():
 	card_name_value.set_text("")
 	card_type_value.set_text("")
 	card_target_value.set_text("")
-	if CardDb.has_card(args):
+	if CardDB.has_card(args):
 		EventBus.buses["PlayerEvents"].emit_signal("card_collected", args)
 		var success = await EventBus.buses["PlayerEvents"].card_added
 		if !success:

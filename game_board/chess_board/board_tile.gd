@@ -5,7 +5,11 @@ class_name BoardTile
 
 var current_unit: Unit
 var tile_size: Vector2
-var tile_data: Dictionary
+var tile_data:= {
+	"board_position": Vector2i.ZERO,
+	"rank": "",
+	"file": ""
+}
 
 @onready var tile_display = get_node("TileDisplay")
 @onready var location_label = get_node("TileDisplay/LocationLabel")
@@ -44,4 +48,11 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	highlighted = false
+	pass # Replace with function body.
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_MASK_LEFT && event.pressed:
+			EventBus.buses["GameBoardEvents"].emit_signal("tile_clicked", self)
 	pass # Replace with function body.

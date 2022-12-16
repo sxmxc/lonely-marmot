@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm63s480huduv"]
+[gd_scene load_steps=14 format=3 uid="uid://xbejhjw1kucp"]
 
 [ext_resource type="Script" path="res://game_board/GameBoard.gd" id="1_n73tf"]
 [ext_resource type="PackedScene" uid="uid://dwylfm45iycpr" path="res://game_board/chess_board/board.tscn" id="2_lr8j4"]
+[ext_resource type="Script" path="res://game_board/fsm/StateMachine.gd" id="2_sge23"]
+[ext_resource type="Script" path="res://game_board/fsm/states/PreGameState.gd" id="3_21v2v"]
+[ext_resource type="Script" path="res://game_board/PlayerHand.gd" id="3_idgig"]
 [ext_resource type="PackedScene" uid="uid://dughmkepehs7f" path="res://player/player.tscn" id="3_r41uw"]
+[ext_resource type="Script" path="res://game_board/PlayerLibrary.gd" id="4_bpawp"]
+[ext_resource type="Script" path="res://game_board/fsm/states/DrawState.gd" id="4_rx2b8"]
+[ext_resource type="Script" path="res://game_board/PlayerGraveyard.gd" id="5_0olo4"]
+[ext_resource type="Script" path="res://game_board/OpponentHand.gd" id="6_nvrxr"]
+[ext_resource type="Script" path="res://game_board/OpponentLibrary.gd" id="7_6unim"]
+[ext_resource type="Script" path="res://game_board/OpponentGraveyard.gd" id="8_6h4tc"]
+[ext_resource type="Script" path="res://game_board/MainState.gd" id="13_nsk3n"]
 
 [node name="GameBoard" type="Node2D"]
 script = ExtResource("1_n73tf")
@@ -12,16 +22,62 @@ position = Vector2(388, 106)
 
 [node name="PlayerHand" type="Node2D" parent="."]
 position = Vector2(595, 624)
+script = ExtResource("3_idgig")
 
 [node name="PlayerLibrary" type="Node2D" parent="."]
-position = Vector2(207, 491)
+position = Vector2(110, 225)
+script = ExtResource("4_bpawp")
 
 [node name="PlayerGraveyard" type="Node2D" parent="."]
+position = Vector2(909, 502)
+script = ExtResource("5_0olo4")
 
 [node name="OpponentHand" type="Node2D" parent="."]
+script = ExtResource("6_nvrxr")
 
 [node name="OpponentLibrary" type="Node2D" parent="."]
+script = ExtResource("7_6unim")
 
 [node name="OpponentGraveyard" type="Node2D" parent="."]
+script = ExtResource("8_6h4tc")
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource("2_sge23")
+
+[node name="PreGameState" type="Node2D" parent="StateMachine"]
+script = ExtResource("3_21v2v")
+
+[node name="DrawState" type="Node2D" parent="StateMachine"]
+script = ExtResource("4_rx2b8")
+
+[node name="MainState" type="Node2D" parent="StateMachine"]
+script = ExtResource("13_nsk3n")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 71.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="GameStateLabel" type="Label" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+text = "Turn Phase: Pre-Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopScreenButton" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Begin"
 
 [node name="Player" parent="." instance=ExtResource("3_r41uw")]
