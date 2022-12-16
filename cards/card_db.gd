@@ -40,7 +40,7 @@ func remove_from_db(id: int):
 		_db.erase(id)
 
 
-func load_from_disk(path: String = "res://cards/data"):
+func load_from_disk(path: String = GlobSettings.PATH_CARD_DB):
 	Logger.log_message("CardDB::Loading data from disk")
 	#EventBus.buses["LoggerEvents"].emit_signal("log_message","Loading data from disk")
 	var dir = DirAccess.open(path)

@@ -34,10 +34,20 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://event_bus/Events.gd"
 }, {
-"base": "Node",
+"base": "RefCounted",
 "class": &"GlobConsts",
 "language": &"GDScript",
 "path": "res://utils/GlobConsts.gd"
+}, {
+"base": "RefCounted",
+"class": &"GlobSettings",
+"language": &"GDScript",
+"path": "res://utils/GlobSettings.gd"
+}, {
+"base": "RefCounted",
+"class": &"GlobUtils",
+"language": &"GDScript",
+"path": "res://utils/GlobUtils.gd"
 }, {
 "base": "Node2D",
 "class": &"Player",
@@ -91,6 +101,8 @@ _global_script_class_icons={
 "CardData": "",
 "Events": "",
 "GlobConsts": "",
+"GlobSettings": "",
+"GlobUtils": "",
 "Player": "",
 "PlayerData": "",
 "PlayerMenu": "",
@@ -106,6 +118,7 @@ _global_script_class_icons={
 
 config/name="logika-magik"
 config/description="Chess TCG"
+run/main_scene="res://main_menu/MainMenu.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 config/version="0.0.1-alpha"

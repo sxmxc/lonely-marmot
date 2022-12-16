@@ -1,6 +1,9 @@
-extends Node
+extends RefCounted
 class_name GlobConsts
 
-const CARD_TEMPLATE = preload("res://cards/card.tscn")
-#TODO need to move this to a game settings preload maybe
-const DEBUG = true
+enum UNIT_TYPE { PAWN, ROOK, BISHOP, KNIGHT, KING, QUEEN}
+enum CARD_TYPE { UNIT, SPELL, TRAP}
+
+const CARD_TEMPLATE := preload("res://cards/card.tscn")
+
+

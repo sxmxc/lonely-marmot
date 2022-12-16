@@ -9,14 +9,14 @@ var current_game_phase
 var player_library = []
 var player_hand = []
 var player_graveyard = []
-@export var max_hand_size = 16
+var max_hand_size = GlobSettings.PLAYER_MAX_HAND
 var unit_starting_positions = {
-	UnitData.UNIT_TYPE.PAWN: ["a2","b2","c2","d2","e2","f2","g2","h2"],
-	UnitData.UNIT_TYPE.ROOK: ["a1","h1"],
-	UnitData.UNIT_TYPE.KNIGHT: ["b1","g1"],
-	UnitData.UNIT_TYPE.BISHOP: ["c1", "f1"],
-	UnitData.UNIT_TYPE.QUEEN: ["d1"],
-	UnitData.UNIT_TYPE.KING: ["e1"]
+	GlobConsts.UNIT_TYPE.PAWN: ["a2","b2","c2","d2","e2","f2","g2","h2"],
+	GlobConsts.UNIT_TYPE.ROOK: ["a1","h1"],
+	GlobConsts.UNIT_TYPE.KNIGHT: ["b1","g1"],
+	GlobConsts.UNIT_TYPE.BISHOP: ["c1", "f1"],
+	GlobConsts.UNIT_TYPE.QUEEN: ["d1"],
+	GlobConsts.UNIT_TYPE.KING: ["e1"]
 	}
 
 
