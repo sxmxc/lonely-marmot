@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://byej6s8evbsl8" path="res://assets/ShieldAndSword.png" id="7_7cvhh"]
 [ext_resource type="Shader" path="res://cards/card_highlighted.gdshader" id="8_dnkj0"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_bk1a5"]
+[sub_resource type="LabelSettings" id="LabelSettings_fvcme"]
 font_size = 12
 font_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lltc8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7iu5f"]
 shader = ExtResource("8_dnkj0")
 shader_parameter/Smooth = true
 shader_parameter/outline_color = Color(0, 1, 0, 1)
@@ -21,16 +21,16 @@ shader_parameter/pixel_size = 4
 shader_parameter/width = 1.0
 shader_parameter/width_speed = 1.0
 
-[sub_resource type="Gradient" id="Gradient_v2thr"]
+[sub_resource type="Gradient" id="Gradient_4uo7j"]
 colors = PackedColorArray(0, 0, 1, 0.643137, 0, 1, 0, 0.113725)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_f752i"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iuekw"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p5yq7"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jl254"]
 seamless = true
 seamless_blend_skirt = 0.482
-color_ramp = SubResource("Gradient_v2thr")
-noise = SubResource("FastNoiseLite_f752i")
+color_ramp = SubResource("Gradient_4uo7j")
+noise = SubResource("FastNoiseLite_iuekw")
 
 [node name="Card" type="Control"]
 process_mode = 1
@@ -39,7 +39,6 @@ anchors_preset = 0
 pivot_offset = Vector2(71, 109)
 script = ExtResource("1_57tch")
 front_facing = true
-metadata/_edit_vertical_guides_ = [0.0]
 metadata/_edit_use_anchors_ = true
 
 [node name="CardBack" type="TextureRect" parent="."]
@@ -74,10 +73,12 @@ stretch_mode = 5
 
 [node name="CardImage" type="TextureRect" parent="CardFront"]
 anchors_preset = -1
-anchor_left = 0.0815407
-anchor_top = 0.0940594
-anchor_right = 0.903763
-anchor_bottom = 0.59901
+anchor_left = 0.0955882
+anchor_top = 0.0931373
+anchor_right = 0.917811
+anchor_bottom = 0.598088
+offset_right = -1.82224
+offset_bottom = -3.00992
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_y2ifc")
@@ -214,20 +215,20 @@ anchor_top = 0.019802
 anchor_right = 0.583778
 anchor_bottom = 0.118812
 text = "Card Name"
-label_settings = SubResource("LabelSettings_bk1a5")
+label_settings = SubResource("LabelSettings_fvcme")
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Highlight" type="TextureRect" parent="."]
 visible = false
 show_behind_parent = true
-material = SubResource("ShaderMaterial_lltc8")
+material = SubResource("ShaderMaterial_7iu5f")
 offset_left = -9.0
 offset_top = -7.0
 offset_right = 62.0
 offset_bottom = 60.0
 scale = Vector2(2.21875, 3.23438)
-texture = SubResource("NoiseTexture2D_p5yq7")
+texture = SubResource("NoiseTexture2D_jl254")
 ignore_texture_size = true
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -95,7 +95,9 @@ func delete_deck(deck_name: String):
 
 func create_deck(deck_name: String):
 	if !_data.player_decks.has(deck_name):
-		_data.player_decks[deck_name] = []
+		var deck = Deck.new()
+		deck.deck_name = deck_name
+		_data.player_decks[deck_name] = deck
 		save_player_data()
 		EventBus.buses["PlayerEvents"].emit_signal("player_data_updated")
 
@@ -108,15 +110,15 @@ func equip_deck(deck_name: String):
 func add_card_to_deck(deck_name: String, card_id: String):
 	if _data.player_collected_cards.has(card_id):
 		if _data.player_decks.has(deck_name):
-			_data.player_decks[deck_name].append(card_id)
+			_data.player_decks[deck_name].deck_contents.append(card_id)
 			save_player_data()
 			EventBus.buses["PlayerEvents"].emit_signal("player_data_updated")
 
 
 func remove_card_from_deck(deck_name: String, card_id: String):
 	if _data.player_decks.has(deck_name):
-		if _data.player_decks[deck_name].has(card_id):
-			_data.player_decks[deck_name].erase(card_id)
+		if _data.player_decks[deck_name].deck_contents.has(card_id):
+			_data.player_decks[deck_name].deck_contents.erase(card_id)
 			save_player_data()
 			EventBus.buses["PlayerEvents"].emit_signal("player_data_updated")
 
@@ -124,4 +126,4 @@ func get_current_deck_name():
 	return _data.player_current_deck
 
 func get_current_deck_contents():
-	return _data.player_decks[_data.player_current_deck]
+	return _data.player_decks[_data.player_current_deck].deck_contents

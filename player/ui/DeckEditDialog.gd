@@ -23,7 +23,7 @@ func update_lists():
 	current_deck_list.clear()
 	for cardID in player_data.player_collected_cards:
 		current_collection_list.add_item(CardDB.get_card_by_id(cardID).card_name)
-	for cardID in player_data.player_decks[selected_deck]:
+	for cardID in player_data.player_decks[selected_deck].deck_contents:
 		current_deck_list.add_item(CardDB.get_card_by_id(cardID).card_name)
 	var deck_list = []
 	for i in current_deck_list.get_item_count():

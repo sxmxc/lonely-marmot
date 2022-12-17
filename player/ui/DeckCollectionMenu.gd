@@ -40,7 +40,7 @@ func update_deck_list():
 
 func display_deck_details(deck_name: String):
 	deck_content_list.clear()
-	for card_id in player_data.player_decks[deck_name]:
+	for card_id in player_data.player_decks[deck_name].deck_contents:
 		deck_content_list.add_item(CardDB.get_card_by_id(card_id).card_name)
 
 func _on_deck_item_list_item_selected(index):
@@ -92,9 +92,9 @@ func _on_deck_edit_dialog_confirmed():
 	var cards_to_add = []
 	for i in deck_edit_dialog.current_deck_list.get_item_count():
 		cards_to_add.append(deck_edit_dialog.current_deck_list.get_item_text(i))
-	player_data.player_decks[deck_list.get_item_text(deck_list.get_selected_items()[0])].clear()
+	player_data.player_decks[deck_list.get_item_text(deck_list.get_selected_items()[0])].deck_contents.clear()
 	for card in cards_to_add:
-		player_data.player_decks[deck_list.get_item_text(deck_list.get_selected_items()[0])].append(CardDB.get_card_id(card))
+		player_data.player_decks[deck_list.get_item_text(deck_list.get_selected_items()[0])].deck_contents.append(CardDB.get_card_id(card))
 	EventBus.buses["PlayerEvents"].emit_signal("deck_updated", deck_list.get_item_text(deck_list.get_selected_items()[0]))
 	pass # Replace with function body.
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://xbejhjw1kucp"]
+[gd_scene load_steps=17 format=3 uid="uid://4ey2c5n2iwst"]
 
 [ext_resource type="Script" path="res://game_board/GameBoard.gd" id="1_n73tf"]
 [ext_resource type="PackedScene" uid="uid://dwylfm45iycpr" path="res://game_board/chess_board/board.tscn" id="2_lr8j4"]
@@ -12,7 +12,10 @@
 [ext_resource type="Script" path="res://game_board/OpponentHand.gd" id="6_nvrxr"]
 [ext_resource type="Script" path="res://game_board/OpponentLibrary.gd" id="7_6unim"]
 [ext_resource type="Script" path="res://game_board/OpponentGraveyard.gd" id="8_6h4tc"]
-[ext_resource type="Script" path="res://game_board/MainState.gd" id="13_nsk3n"]
+[ext_resource type="Script" path="res://game_board/fsm/states/MainState.gd" id="12_5dlof"]
+[ext_resource type="Script" path="res://game_board/fsm/states/MoveState.gd" id="13_qtpxt"]
+[ext_resource type="Script" path="res://game_board/fsm/states/MainState2.gd" id="14_1rrdl"]
+[ext_resource type="Script" path="res://game_board/fsm/states/EndState.gd" id="15_i5qy4"]
 
 [node name="GameBoard" type="Node2D"]
 script = ExtResource("1_n73tf")
@@ -51,7 +54,16 @@ script = ExtResource("3_21v2v")
 script = ExtResource("4_rx2b8")
 
 [node name="MainState" type="Node2D" parent="StateMachine"]
-script = ExtResource("13_nsk3n")
+script = ExtResource("12_5dlof")
+
+[node name="MoveState" type="Node2D" parent="StateMachine"]
+script = ExtResource("13_qtpxt")
+
+[node name="MainState2" type="Node2D" parent="StateMachine"]
+script = ExtResource("14_1rrdl")
+
+[node name="EndState" type="Node2D" parent="StateMachine"]
+script = ExtResource("15_i5qy4")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -70,12 +82,19 @@ alignment = 1
 
 [node name="GameStateLabel" type="Label" parent="Control/VBoxContainer"]
 unique_name_in_owner = true
+offset_top = 5.0
+offset_right = 1153.0
+offset_bottom = 31.0
 text = "Turn Phase: Pre-Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TopScreenButton" type="Button" parent="Control/VBoxContainer"]
 unique_name_in_owner = true
+offset_left = 550.0
+offset_top = 35.0
+offset_right = 602.0
+offset_bottom = 66.0
 size_flags_horizontal = 4
 mouse_filter = 1
 text = "Begin"
