@@ -83,27 +83,19 @@ alignment = 1
 
 [node name="GameStateLabel" type="Label" parent="Control/VBoxContainer"]
 unique_name_in_owner = true
-<<<<<<< HEAD
 offset_top = 5.0
 offset_right = 1153.0
 offset_bottom = 31.0
-=======
-layout_mode = 2
->>>>>>> 6c16e7ec4c166a63cb853aba6c76ab51e21318bd
 text = "Turn Phase: Pre-Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TopScreenButton" type="Button" parent="Control/VBoxContainer"]
 unique_name_in_owner = true
-<<<<<<< HEAD
 offset_left = 550.0
 offset_top = 35.0
 offset_right = 602.0
 offset_bottom = 66.0
-=======
-layout_mode = 2
->>>>>>> 6c16e7ec4c166a63cb853aba6c76ab51e21318bd
 size_flags_horizontal = 4
 mouse_filter = 1
 text = "Begin"
