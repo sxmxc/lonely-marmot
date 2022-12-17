@@ -27,8 +27,8 @@ var card_name : String
 var card_flavor_text : String
 var card_ability_text : String
 var card_value
-var card_type : CardData.CARD_TYPE
-var card_target_type : UnitData.UNIT_TYPE
+var card_type : GlobConsts.CARD_TYPE
+var card_target_type : GlobConsts.UNIT_TYPE
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -72,8 +72,8 @@ func update_card_view():
 	card_ability_text_label.set_text(card_ability_text)
 	card_flavor_text_label.set_text(card_flavor_text)
 	card_image.texture = card_data.card_image
-	card_type_label.text = CardData.CARD_TYPE.keys()[card_type]
-	card_target_label.text = UnitData.UNIT_TYPE.keys()[card_target_type]
+	card_type_label.text = GlobConsts.CARD_TYPE.keys()[card_type]
+	card_target_label.text = GlobConsts.UNIT_TYPE.keys()[card_target_type]
 
 
 

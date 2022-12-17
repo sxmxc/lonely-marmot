@@ -36,8 +36,8 @@ func display_card(id: String):
 	var card = CardDB.get_card_by_id(id)
 	card_id_label.text = card.card_id
 	card_name_label.text = card.card_name
-	card_type_label.text = CardData.CARD_TYPE.keys()[card.card_type]
-	card_target_label.text = UnitData.UNIT_TYPE.keys()[card.card_target_type]
+	card_type_label.text = GlobConsts.CARD_TYPE.keys()[card.card_type]
+	card_target_label.text = GlobConsts.UNIT_TYPE.keys()[card.card_target_type]
 	card_image.texture = card.card_image
 	var count = 0
 	for crd in player_data.player_collected_cards:

@@ -23,7 +23,7 @@ func back():
 		_enter_state()
 
 func _enter_state():
-	if GlobConsts.DEBUG:
+	if GlobSettings.DEBUG:
 		EventBus.buses["LoggerEvents"].emit_signal("log_message", "StateMachine::Entering state %s" % state.name)
 	# Give the new state a reference to this state machine script
 	state.fsm = self

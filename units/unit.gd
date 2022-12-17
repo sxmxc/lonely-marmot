@@ -10,7 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
-func get_type() -> UnitData.UNIT_TYPE:
+func get_type() -> GlobConsts.UNIT_TYPE:
 	return unit_data.type
 
 func get_name():
