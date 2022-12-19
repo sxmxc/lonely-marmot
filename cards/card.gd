@@ -15,9 +15,12 @@ class_name Card
 @export var card_data : CardData
 @export var front_facing = false
 
-var dragging := false
 
+var dragging := false
+var magnified := false
 var highlighted := false
+var in_graveyard := false
+var is_moving := false
 
 var starting_position := Vector2.ZERO
 var starting_rotation : float
@@ -75,33 +78,41 @@ func update_card_view():
 	card_type_label.text = GlobConsts.CARD_TYPE.keys()[card_type]
 	card_target_label.text = GlobConsts.UNIT_TYPE.keys()[card_target_type]
 
+func magnify_card():
+	z_index = 1
+	var tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "position", Vector2(position.x, position.y - 150), .5).from(starting_position)
+	tween.tween_property(self, "rotation", 0, .5).from(starting_rotation)
+	tween.tween_property(self, "scale", Vector2(1.5,1.5), .5)
+	magnified = true
 
+
+func unmagnify_card():
+	z_index = 0
+	var tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "position", starting_position, .5)
+	tween.tween_property(self, "rotation", starting_rotation, .5)
+	tween.tween_property(self, "scale", Vector2(1,1), .5)
+	magnified = false
 
 
 
 func _on_mouse_entered():
-	if !dragging:
+	if !magnified and !dragging and front_facing and !in_graveyard:
 		get_node("Highlight").visible = true
 		highlighted = true
-		z_index = 1
-		var tween = get_tree().create_tween()
-		tween.set_parallel(true)
-		tween.tween_property(self, "position", Vector2(position.x, position.y - 200), .5)
-		tween.tween_property(self, "rotation", 0, .5)
-		tween.tween_property(self, "scale", Vector2(1.5,1.5), .5)
+		magnify_card()
+
 	pass # Replace with function body.
 
 
 func _on_mouse_exited():
-	if !dragging:
+	if magnified and !dragging and front_facing and !in_graveyard:
 		get_node("Highlight").visible = false
 		highlighted = false
-		z_index = 0
-		var tween = get_tree().create_tween()
-		tween.set_parallel(true)
-		tween.tween_property(self, "position", starting_position, .5)
-		tween.tween_property(self, "rotation", starting_rotation, .5)
-		tween.tween_property(self, "scale", Vector2(1,1), .5)
+		unmagnify_card()
 	pass # Replace with function body.
 
 
@@ -112,7 +123,7 @@ func _on_gui_input(event):
 				dragging = true
 				var tween = get_tree().create_tween()
 				tween.set_parallel(true)
-				tween.tween_property(self, "scale", Vector2(.5,.5), .5)
+				tween.tween_property(self, "scale", Vector2(.75,.75), .5)
 				EventBus.buses["GameBoardEvents"].emit_signal("card_selected", self)
 			else:
 				dragging = false

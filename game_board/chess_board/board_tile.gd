@@ -11,21 +11,40 @@ var tile_data:= {
 	"file": ""
 }
 
+var gameboard : GameBoard = null
+
 @onready var tile_display = get_node("TileDisplay")
 @onready var location_label = get_node("TileDisplay/LocationLabel")
 @onready var rankfile_label = get_node("TileDisplay/RankFileLabel")
 
 var highlighted = false
+var valid = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	size = tile_size
 	pass # Replace with function body.
 
+func initialize(gb : GameBoard):
+	gameboard = gb
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if highlighted:
+		if gameboard.is_dragging_card and (gameboard.dragging_card.card_type == GlobConsts.CARD_TYPE.UNIT):
+			var filerank = str(tile_data.file + tile_data.rank)
+			var valid_tiles = gameboard.unit_starting_positions[gameboard.dragging_card.card_target_type]
+			if filerank in valid_tiles and !current_unit:
+				valid = true
+			else:
+				valid = false
+			if valid:
+				tile_display.get_node("TextureRect").modulate = Color(Color.GREEN, .5)
+			else:
+				tile_display.get_node("TextureRect").modulate = Color(Color.RED, .5)
+		else:
+			valid = false
+			tile_display.get_node("TextureRect").modulate = Color(Color.BLUE, .5)
 		tile_display.visible = true
 	else:
 		tile_display.visible = false
@@ -35,7 +54,7 @@ func remove_unit():
 	current_unit = null
 	pass
 
-func add_unit(unit):
+func add_unit(unit: Unit):
 	current_unit = unit
 
 

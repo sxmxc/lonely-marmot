@@ -2,8 +2,8 @@ extends TabContainer
 
 var tab_dict = {
 	"Main": 0,
-	"Settings": 1, 
-	"Card Library": 2, 
+	"Settings": 1,
+	"Card Library": 2,
 	"Deck Builder": 3,
 	"Dev Menu": 4
 }

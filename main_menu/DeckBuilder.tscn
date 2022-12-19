@@ -1,0 +1,224 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwsit0bvsgyhe"]
+
+[ext_resource type="Script" path="res://main_menu/DeckBuilder.gd" id="1_dxd2g"]
+
+[node name="DeckBuilder" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dxd2g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+text = "Deck Name:"
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 30)
+placeholder_text = "Deck Name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+text = "Collection"
+horizontal_alignment = 1
+
+[node name="CollectionList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+text = "Deck"
+horizontal_alignment = 1
+
+[node name="DeckContentList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+text = "Starters"
+horizontal_alignment = 1
+
+[node name="StarterList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+
+[node name="Pawn1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn1"]
+text = "Pawn 1:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn1"]
+text = "Card Name"
+
+[node name="Pawn2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn2"]
+text = "Pawn 2:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn2"]
+text = "Card Name"
+
+[node name="Pawn3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn3"]
+text = "Pawn 3:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn3"]
+text = "Card Name"
+
+[node name="Pawn4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn4"]
+text = "Pawn 4:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn4"]
+text = "Card Name"
+
+[node name="Pawn5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn5"]
+text = "Pawn 5:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn5"]
+text = "Card Name"
+
+[node name="Pawn6" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn6"]
+text = "Pawn 6:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn6"]
+text = "Card Name"
+
+[node name="Pawn7" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn7"]
+text = "Pawn 7:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn7"]
+text = "Card Name"
+
+[node name="Pawn8" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn8"]
+text = "Pawn 8:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Pawn8"]
+text = "Card Name"
+
+[node name="Rook1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Rook1"]
+text = "Rook 1:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Rook1"]
+text = "Card Name"
+
+[node name="Rook2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Rook2"]
+text = "Rook 2:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Rook2"]
+text = "Card Name"
+
+[node name="Bishop1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Bishop1"]
+text = "Bishop 1:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Bishop1"]
+text = "Card Name"
+
+[node name="Bishop2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Bishop2"]
+text = "Bishop 2:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Bishop2"]
+text = "Card Name"
+
+[node name="Knight1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Knight1"]
+text = "Knight 1:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Knight1"]
+text = "Card Name"
+
+[node name="Knight2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Knight2"]
+text = "Knight 2:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Knight2"]
+text = "Card Name"
+
+[node name="Queen" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Queen"]
+text = "Queen:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/Queen"]
+text = "Card Name"
+
+[node name="King" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList"]
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/King"]
+text = "King:"
+
+[node name="StarterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/StarterList/King"]
+text = "Card Name"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+text = "Back"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+text = "Cancel"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+text = "Save"

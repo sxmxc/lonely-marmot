@@ -9,6 +9,7 @@ var history = []
 
 func _ready():
 	# Set the initial state to the first child node
+	await owner.ready
 	state = get_child(0)
 	_enter_state()
 

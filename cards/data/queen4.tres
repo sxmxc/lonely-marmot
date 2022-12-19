@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c4dkglf3o253h"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c4dkglf3o253h"]
 
 [ext_resource type="Script" path="res://cards/card_data.gd" id="1_4nwff"]
 [ext_resource type="Texture2D" uid="uid://bxvxioqf42fjq" path="res://cards/Black_Queen_full.webp" id="1_yov1d"]
+[ext_resource type="Texture2D" uid="uid://b4g8h0t4w07ts" path="res://assets/chess-queen.svg" id="3_xh3ic"]
 
 [resource]
 script = ExtResource("1_4nwff")
@@ -10,6 +11,7 @@ card_id = "004"
 card_ability_text = "Moves like normal"
 card_flavor_text = "Not much is known"
 card_image = ExtResource("1_yov1d")
+unit_image = ExtResource("3_xh3ic")
 card_value = null
 card_type = 0
 card_target_type = 5

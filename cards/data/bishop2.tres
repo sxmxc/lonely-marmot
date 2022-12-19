@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c4qpblvhxwson"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c4qpblvhxwson"]
 
 [ext_resource type="Script" path="res://cards/card_data.gd" id="1_1ou8x"]
 [ext_resource type="Texture2D" uid="uid://c8xv2q306nnbs" path="res://cards/6390514392af27d969fc04ed601af9066a49366e_hq.jpg" id="1_hqpwv"]
+[ext_resource type="Texture2D" uid="uid://b8aet6qtelijb" path="res://assets/chess-bishop.svg" id="3_v0wqr"]
 
 [resource]
 script = ExtResource("1_1ou8x")
@@ -10,6 +11,7 @@ card_id = "002"
 card_ability_text = "Moves like normal"
 card_flavor_text = "Not much is known"
 card_image = ExtResource("1_hqpwv")
+unit_image = ExtResource("3_v0wqr")
 card_value = null
 card_type = 0
 card_target_type = 2

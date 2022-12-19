@@ -37,6 +37,7 @@ func initialize_board():
 			tile.position = Vector2(row * tile_size.x, col * tile_size.y)
 			board_tiles[col].append(tile)
 			board_tile_container.add_child(tile)
+			tile.initialize(owner)
 	pass
 
 func get_tile_content(pos = Vector2i()):

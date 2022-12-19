@@ -1,4 +1,4 @@
-extends Node2D
+extends CardContainer
 
 const card_template = preload("res://cards/card.tscn")
 
@@ -18,7 +18,6 @@ func initialize(player_library):
 		add_child(card)
 		card.set_owner(self)
 		card.update_card_view()
-		card.position = Vector2.ZERO
-		card.starting_position = Vector2.ZERO
+		card.position = -card.size/2
+		card.starting_position = card.position
 		card.starting_rotation = global_rotation
-

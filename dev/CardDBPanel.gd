@@ -26,8 +26,8 @@ func _on_lookup_button_pressed():
 	if CardDB.has_card(args):
 		var card_data = CardDB.get_card_by_id(args)
 		card_name_value.set_text(card_data.card_name)
-		card_type_value.set_text(CardData.CARD_TYPE.keys()[card_data.card_type])
-		card_target_value.set_text(UnitData.UNIT_TYPE.keys()[card_data.card_target_type])
+		card_type_value.set_text(GlobConsts.CARD_TYPE.keys()[card_data.card_type])
+		card_target_value.set_text(GlobConsts.UNIT_TYPE.keys()[card_data.card_target_type])
 	else:
 		card_name_value.set_text("")
 		card_type_value.set_text("")

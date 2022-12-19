@@ -2,7 +2,8 @@ extends Node2D
 class_name Player
 
 @export var _data: PlayerData
-@export var _save_file: String = "res://player/data/player_data.res"
+@export var _save_file: String = GlobSettings.PATH_PLAYER_SAVE
+@export var _deck_path: String = GlobSettings.PATH_PLAYER_DECKS
 
 
 #@onready var _deck_node = get_node("Deck")
@@ -95,8 +96,11 @@ func delete_deck(deck_name: String):
 
 func create_deck(deck_name: String):
 	if !_data.player_decks.has(deck_name):
-		var deck = Deck.new()
-		deck.deck_name = deck_name
+		var deck = {
+			"deck_name": deck_name,
+			"deck_contents": [],
+			"deck_starters": []
+		}
 		_data.player_decks[deck_name] = deck
 		save_player_data()
 		EventBus.buses["PlayerEvents"].emit_signal("player_data_updated")

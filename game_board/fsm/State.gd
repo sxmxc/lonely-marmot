@@ -2,7 +2,7 @@ extends Node2D
 class_name State
 
 var fsm: StateMachine
-var game_board
+var game_board: GameBoard
 
 func enter():
 	print("State.enter() not overridden")

@@ -24,20 +24,25 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://cards/card.gd"
 }, {
+"base": "Area2D",
+"class": &"CardContainer",
+"language": &"GDScript",
+"path": "res://game_board/CardContainer.gd"
+}, {
 "base": "Resource",
 "class": &"CardData",
 "language": &"GDScript",
 "path": "res://cards/card_data.gd"
 }, {
-"base": "Resource",
-"class": &"Deck",
-"language": &"GDScript",
-"path": "res://cards/deck.gd"
-}, {
 "base": "Node2D",
 "class": &"Events",
 "language": &"GDScript",
 "path": "res://event_bus/Events.gd"
+}, {
+"base": "Node2D",
+"class": &"GameBoard",
+"language": &"GDScript",
+"path": "res://game_board/GameBoard.gd"
 }, {
 "base": "RefCounted",
 "class": &"GlobConsts",
@@ -89,11 +94,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://units/unit.gd"
 }, {
-"base": "Resource",
-"class": &"UnitData",
-"language": &"GDScript",
-"path": "res://units/unit_data.gd"
-}, {
 "base": "GDScript",
 "class": &"dice_syntax",
 "language": &"GDScript",
@@ -103,9 +103,10 @@ _global_script_class_icons={
 "Board": "",
 "BoardTile": "",
 "Card": "",
+"CardContainer": "",
 "CardData": "",
-"Deck": "",
 "Events": "",
+"GameBoard": "",
 "GlobConsts": "",
 "GlobSettings": "",
 "GlobUtils": "",
@@ -116,7 +117,6 @@ _global_script_class_icons={
 "State": "",
 "StateMachine": "",
 "Unit": "",
-"UnitData": "",
 "dice_syntax": ""
 }
 
@@ -137,16 +137,22 @@ Logger="*res://event_bus/Logger.tscn"
 
 [debug]
 
+settings/stdout/verbose_stdout=true
 gdscript/warnings/unused_parameter=0
 
 [display]
 
+window/per_pixel_transparency/allowed=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/dice_syntax/plugin.cfg", "res://addons/ColorConsole/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
@@ -159,3 +165,9 @@ player_menu={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+driver/threads/thread_model=2
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

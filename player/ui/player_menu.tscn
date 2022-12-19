@@ -36,7 +36,6 @@ grow_vertical = 2
 mouse_filter = 0
 
 [node name="PlayerInfo" type="MarginContainer" parent="MenuContainer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -71,12 +70,6 @@ text = "xxxxx"
 
 [node name="CardCollectionMenu" type="MarginContainer" parent="MenuContainer"]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 31.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
@@ -86,24 +79,17 @@ script = ExtResource("1_0llds")
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/CardCollectionMenu"]
 offset_left = 50.0
 offset_top = 50.0
-offset_right = 1102.0
-offset_bottom = 567.0
+offset_right = 185.0
+offset_bottom = 80.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/CardCollectionMenu/HBoxContainer"]
-offset_right = 524.0
-offset_bottom = 517.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer"]
-offset_right = 524.0
-offset_bottom = 26.0
 text = "Collection"
 
 [node name="CollectionItemList" type="ItemList" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 30.0
-offset_right = 524.0
-offset_bottom = 517.0
 size_flags_vertical = 3
 auto_height = true
 item_count = 3
@@ -112,20 +98,12 @@ item_1/text = "Some Other Card"
 item_2/text = "Another Card"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MenuContainer/CardCollectionMenu/HBoxContainer"]
-offset_left = 528.0
-offset_right = 1052.0
-offset_bottom = 517.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2"]
-offset_right = 524.0
-offset_bottom = 26.0
 text = "Details"
 
 [node name="Panel" type="Panel" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2"]
-offset_top = 30.0
-offset_right = 524.0
-offset_bottom = 517.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -137,113 +115,61 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-offset_right = 524.0
-offset_bottom = 26.0
 
 [node name="Label" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
-offset_right = 62.0
-offset_bottom = 26.0
 text = "Card ID:"
 
 [node name="CardIDValue" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-offset_left = 66.0
-offset_top = 1.0
-offset_right = 253.0
-offset_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="Label2" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
-offset_left = 257.0
-offset_right = 333.0
-offset_bottom = 26.0
 text = "Collected:"
 horizontal_alignment = 2
 
 [node name="CardCount" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-offset_left = 337.0
-offset_right = 524.0
-offset_bottom = 26.0
 size_flags_horizontal = 3
 text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-offset_top = 30.0
-offset_right = 524.0
-offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer2"]
-offset_right = 92.0
-offset_bottom = 26.0
 text = "Card Name:"
 
 [node name="CardNameValue" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
-offset_left = 96.0
-offset_top = 1.0
-offset_right = 97.0
-offset_bottom = 24.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-offset_top = 60.0
-offset_right = 524.0
-offset_bottom = 86.0
 
 [node name="Label" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer3"]
-offset_right = 82.0
-offset_bottom = 26.0
 text = "Card Type:"
 
 [node name="CardTypeValue" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
-offset_left = 86.0
-offset_top = 1.0
-offset_right = 87.0
-offset_bottom = 24.0
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-offset_top = 90.0
-offset_right = 524.0
-offset_bottom = 116.0
 
 [node name="Label" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer4"]
-offset_right = 95.0
-offset_bottom = 26.0
 text = "Card Target:"
 
 [node name="CardTargetValue" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer/HBoxContainer4"]
 unique_name_in_owner = true
-offset_left = 99.0
-offset_top = 1.0
-offset_right = 100.0
-offset_bottom = 24.0
 
 [node name="CardImage" type="TextureRect" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 250)
-offset_top = 120.0
-offset_right = 524.0
-offset_bottom = 457.0
 size_flags_vertical = 3
 texture = ExtResource("1_wk5s7")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="MenuContainer/CardCollectionMenu/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-offset_top = 461.0
-offset_right = 524.0
-offset_bottom = 487.0
 text = "Card Image"
 horizontal_alignment = 1
 
 [node name="DeckCollectionMenu" type="MarginContainer" parent="MenuContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 31.0
-grow_horizontal = 2
-grow_vertical = 2
+visible = false
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
@@ -253,77 +179,48 @@ script = ExtResource("4_n73xl")
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/DeckCollectionMenu"]
 offset_left = 50.0
 offset_top = 50.0
-offset_right = 1102.0
-offset_bottom = 567.0
+offset_right = 481.0
+offset_bottom = 115.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/DeckCollectionMenu/HBoxContainer"]
-offset_right = 524.0
-offset_bottom = 517.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer"]
-offset_right = 524.0
-offset_bottom = 26.0
 text = "Decks"
 
 [node name="DeckItemList" type="ItemList" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 30.0
-offset_right = 524.0
-offset_bottom = 482.0
 size_flags_vertical = 3
 fixed_icon_size = Vector2i(20, 20)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer"]
-offset_top = 486.0
-offset_right = 524.0
-offset_bottom = 517.0
 
 [node name="NewDeckButton" type="Button" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-offset_right = 86.0
-offset_bottom = 31.0
 text = "New Deck"
 
 [node name="EquipDeckButton" type="Button" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-offset_left = 90.0
-offset_right = 184.0
-offset_bottom = 31.0
 text = "Equip Deck"
 
 [node name="EditDeckButton" type="Button" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-offset_left = 188.0
-offset_right = 268.0
-offset_bottom = 31.0
 disabled = true
 text = "Edit Deck"
 
 [node name="DeleteDeckButton" type="Button" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-offset_left = 272.0
-offset_right = 373.0
-offset_bottom = 31.0
 disabled = true
 text = "Delete Deck"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MenuContainer/DeckCollectionMenu/HBoxContainer"]
-offset_left = 528.0
-offset_right = 1052.0
-offset_bottom = 517.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer2"]
-offset_right = 524.0
-offset_bottom = 26.0
 text = "Details"
 
 [node name="DeckContentList" type="ItemList" parent="MenuContainer/DeckCollectionMenu/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
-offset_top = 30.0
-offset_right = 524.0
-offset_bottom = 517.0
 size_flags_vertical = 3
 auto_height = true
 
@@ -358,59 +255,35 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DeckEditDialog/HBoxContainer"]
-offset_right = 293.0
-offset_bottom = 443.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="DeckEditDialog/HBoxContainer/VBoxContainer"]
-offset_right = 293.0
-offset_bottom = 26.0
 text = "Available"
 
 [node name="CurrentCollectionList" type="ItemList" parent="DeckEditDialog/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 30.0
-offset_right = 293.0
-offset_bottom = 443.0
 size_flags_vertical = 3
 select_mode = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="DeckEditDialog/HBoxContainer"]
-offset_left = 297.0
-offset_right = 386.0
-offset_bottom = 443.0
 alignment = 1
 
 [node name="AddToDeckButton" type="Button" parent="DeckEditDialog/HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
-offset_top = 188.0
-offset_right = 89.0
-offset_bottom = 219.0
 text = "Add>>"
 
 [node name="RemoveFromDeckButton" type="Button" parent="DeckEditDialog/HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
-offset_top = 223.0
-offset_right = 89.0
-offset_bottom = 254.0
 text = "<<Remove"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="DeckEditDialog/HBoxContainer"]
-offset_left = 390.0
-offset_right = 684.0
-offset_bottom = 443.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="DeckEditDialog/HBoxContainer/VBoxContainer2"]
-offset_right = 294.0
-offset_bottom = 26.0
 text = "Deck"
 
 [node name="CurrentDeckList" type="ItemList" parent="DeckEditDialog/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
-offset_top = 30.0
-offset_right = 294.0
-offset_bottom = 443.0
 size_flags_vertical = 3
 select_mode = 1
 
